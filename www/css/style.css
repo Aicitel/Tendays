@@ -1,0 +1,71 @@
+/* Empty. Add your own CSS if you like */
+
+p{
+    width:100%;
+    height:100%;
+    vertical-align:middle;
+}
+.wrap {
+    display:table;
+    height: 45px;
+    _position:relative;
+    overflow:hidden;
+}
+.subwrap {
+    vertical-align:middle;
+    display:table-cell;
+    _position:absolute;
+    _top:50%;
+}
+.innerwrap {
+    _position:relative;
+    _top:-50%;
+}
+
+.choiceButton{
+    width: 140px;
+    text-align: center;
+    color: #fff;
+    text-shadow:1px 1px 1px #333;
+    border-radius: 5px;
+    margin:0 20px 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+.gray{
+    color: #2e2e2e;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #dce1e6;
+    box-shadow: 0 1px 2px #fff inset,0 -1px 0 #a8abae inset;
+    background: -webkit-linear-gradient(top,#f2f3f7,#e4e8ec);
+    background: -moz-linear-gradient(top,#f2f3f7,#e4e8ec);
+    background: linear-gradient(top,#f2f3f7,#e4e8ec);
+}
+
+.dance{
+    position:relative;
+    animation:vanish 4s;
+    animation-fill-mode:forwards
+}
+.parentDiv{
+    height: 60px;
+    position:relative;
+}
+.content{   height:45px; width:100%; background:#fff; position:absolute; z-index:1;}
+.cover{  height:60px; width:100%; background:#fff; position:absolute; top:0px; left:0; z-index:2;}
+
+
+@keyframes vanish{
+    from{
+        opacity:1;
+    }
+    99%{
+        transform:translateY(0px);
+    }
+    to{
+        opacity:0;
+    }
+    to{
+        transform:translateY(-100px);
+    }
+}

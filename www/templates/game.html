@@ -1,0 +1,32 @@
+<ion-view view-title="Chats">
+    <ion-content class="padding">
+        <ion-scroll direction="y" style="height: 2000px">
+            <div id="mainContent" style="height:{{contentHeight}}px">
+                <div ng-repeat="text in texts track by $index">
+                    <div class="parentDiv">
+                        <div class="content" ng-if="texts[$index].choice==true">
+                            <div class="button-bar">
+                                <button class="choiceButton gray" ng-click="makeChoice(cntNode,0)">
+                                    {{texts[$index].textLeft}}
+                                </button>
+                                <button class="choiceButton gray" ng-click="makeChoice(cntNode,1)">
+                                    {{texts[$index].textRight}}
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="wrap">
+                            <div class="subwrap">
+                                <div class="content innerwrap" ng-if="texts[$index].choice!=true">
+                                        {{(texts[$index].choice!=true)?texts[$index].content:''}}
+                                </div>
+                                <div class="cover dance" style="animation-delay:{{0.5*($index-lastDivCount)}}s">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>
